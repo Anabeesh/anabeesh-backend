@@ -46,7 +46,8 @@ namespace Anabeesh.Services.Questions
         {
             var question = _unitOfWork.QuestionRepository.GetById(id);
             if (question == null) return false;
-            _unitOfWork.QuestionRepository.Delete(id);
+            question.IsDeleted = true;
+            _unitOfWork.QuestionRepository.Update(question);
             return true;
         }
 
@@ -71,7 +72,7 @@ namespace Anabeesh.Services.Questions
         }
 
         // Check pageSize from youssef
-        public List<GetQuestionDto> ListQuestions(int page = 0, int pageSize = 5)
+        public List<GetQuestionDto> ListQuestions(int page, int pageSize)
         {
             var questions = _unitOfWork.QuestionRepository.GetList(page, pageSize).ToList();
             var questionsResult = new List<GetQuestionDto>();
@@ -95,7 +96,16 @@ namespace Anabeesh.Services.Questions
             return questionsResult;
         }
 
-
+        public bool UpdateQuestion (UpdateQuestionDto dto)
+        {
+            var question = _unitOfWork.QuestionRepository.GetById(dto.Id);
+            if (question == null) return false;
+            question.Headline = dto.Headline;
+            question.Description = dto.Description;
+            question.Upvotes = dto.Upvotes;
+            _unitOfWork.QuestionRepository.Update(question);
+            return true;
+        }
 
     }
 }

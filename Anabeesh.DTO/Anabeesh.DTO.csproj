@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PagedListParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Questions\CreateQuestionDto.cs" />
     <Compile Include="Questions\GetQuestionDto.cs" />
+    <Compile Include="Questions\UpdateQuestionDto.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

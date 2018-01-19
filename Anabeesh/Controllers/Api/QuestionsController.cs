@@ -1,4 +1,5 @@
-﻿using Anabeesh.DTO.Questions;
+﻿using Anabeesh.DTO;
+using Anabeesh.DTO.Questions;
 using Anabeesh.Services.Questions;
 using System;
 using System.Collections.Generic;
@@ -19,15 +20,15 @@ namespace Anabeesh.Controllers.Api
         }
 
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IHttpActionResult Get([FromUri] PagedListParameter dto)
         {
-            return new string[] { "value1", "value2" };
+            return Ok(_questionsService.ListQuestions(dto.Page, dto.PageSize));
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return "value";
+            return Ok(_questionsService.GetQuestionById(id));
         }
 
         // POST api/<controller>
@@ -38,8 +39,11 @@ namespace Anabeesh.Controllers.Api
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public IHttpActionResult Put([FromBody] UpdateQuestionDto dto)
         {
+            var result = _questionsService.UpdateQuestion(dto);
+            if (result == false) return NotFound();
+            return Ok();
         }
 
         // DELETE api/<controller>/5

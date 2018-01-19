@@ -27,7 +27,7 @@ namespace Anabeesh.Data.Repositories
 
         public IQueryable<T> GetList(int page, int pageSize)
         {
-            return Entities.Skip(page * pageSize).Take(pageSize).AsQueryable();
+            return Entities.OrderBy(T => T.Id).Skip(page * pageSize).Take(pageSize).AsQueryable();
         }
 
 

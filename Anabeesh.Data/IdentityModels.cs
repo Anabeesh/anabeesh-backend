@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 using Anabeesh.Data.Questions;
+using System.ComponentModel.DataAnnotations;
 
 namespace Anabeesh.Data
 {
@@ -19,6 +20,7 @@ namespace Anabeesh.Data
         public ApplicationUser()
         {
             Questions = new HashSet<Question>();
+            Answers = new HashSet<Answer>();
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -31,6 +33,40 @@ namespace Anabeesh.Data
 
 
         public virtual ICollection<Question> Questions { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string MiddleName { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string LastName { get; set; }
+
+        [Required]
+        public byte Country { get; set; }
+
+        [Required]
+        public string Phone { get; set; }
+
+        [Required]
+        public bool Gender { get; set; }
+
+        [Required]
+        public long NumberOfFollowers { get; set; }
+
+        [Required]
+        public long NumberOfFollowing { get; set; }
+
+        [Required]
+        public long NumberOfQuestions { get; set; }
+
+        [Required]
+        public long NumberOfAnswers { get; set; }
+
+        public virtual ICollection<Answer> Answers { get; set; }
 
     }
 

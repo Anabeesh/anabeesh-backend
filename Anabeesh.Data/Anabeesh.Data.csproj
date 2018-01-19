@@ -80,8 +80,17 @@
     <Compile Include="Migrations\201801171429501_initial-migration.Designer.cs">
       <DependentUpon>201801171429501_initial-migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801191316271_extend-user-profile.cs" />
+    <Compile Include="Migrations\201801191316271_extend-user-profile.Designer.cs">
+      <DependentUpon>201801191316271_extend-user-profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801191327446_added-answer-entity.cs" />
+    <Compile Include="Migrations\201801191327446_added-answer-entity.Designer.cs">
+      <DependentUpon>201801191327446_added-answer-entity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Questions\Answer.cs" />
     <Compile Include="Questions\MainCategory.cs" />
     <Compile Include="Questions\Question.cs" />
     <Compile Include="Questions\SubCategory.cs" />
@@ -95,6 +104,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801171429501_initial-migration.resx">
       <DependentUpon>201801171429501_initial-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801191316271_extend-user-profile.resx">
+      <DependentUpon>201801191316271_extend-user-profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801191327446_added-answer-entity.resx">
+      <DependentUpon>201801191327446_added-answer-entity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

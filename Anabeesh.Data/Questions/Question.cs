@@ -10,6 +10,12 @@ namespace Anabeesh.Data.Questions
 {
     public class Question : BaseEntity
     {
+
+        public Question()
+        {
+            Answers = new HashSet<Answer>();
+        }
+
         /// <summary>
         /// Question headline
         /// </summary>
@@ -64,6 +70,8 @@ namespace Anabeesh.Data.Questions
         public virtual SubCategory SubCategory { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }
+
+        public virtual ICollection<Answer> Answers { get; set; }
 
 
     }

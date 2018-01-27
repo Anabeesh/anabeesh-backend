@@ -2,6 +2,8 @@
 
 Anabeesh is an arabic question-and-answer platform where questions asked by it's community get answered by experts.
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://choosealicense.com/licenses/apache-2.0/)
+
 <h2>Features</h2> 
 
 Anabeesh gives you the ability to:

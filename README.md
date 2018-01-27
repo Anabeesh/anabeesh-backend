@@ -21,8 +21,6 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 
 - [Amr Aly](https://github.com/amr-aly)
 
-- [Mohamed AbdelNaeem](https://github.com/melnaeem)
-
 <h2>License</h2>
 
 Copyright 2018 Anabeesh
